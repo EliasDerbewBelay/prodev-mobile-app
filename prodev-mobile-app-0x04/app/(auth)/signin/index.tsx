@@ -60,7 +60,7 @@ export default function Signin() {
 
       <View style={styles.subTextGroup}>
         <Text style={styles.subText}>Don’t have an account? </Text>
-        <Link href="join">
+        <Link href="/(auth)/join">
           <Text style={styles.subTextJoin}>Join Now</Text>
         </Link>
       </View>

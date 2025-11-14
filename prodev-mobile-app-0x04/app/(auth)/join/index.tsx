@@ -68,7 +68,7 @@ export default function Join() {
 
       <View style={styles.signupgroup}>
         <Text style={styles.signupTitleText}>Already have an account? </Text>
-        <Link href="signin">
+        <Link href="/(auth)/signin">
           <Text style={styles.signupSubTitleText}>Sign In</Text>
         </Link>
       </View>

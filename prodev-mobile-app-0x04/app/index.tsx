@@ -8,6 +8,7 @@ import {
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { styles } from "@/styles/_mainstyle";
 import { BACKGROUNDIMAGE, HEROLOGO } from "@/constants";
+import { Link } from "expo-router";
 
 export default function Index() {
   return (
@@ -34,13 +35,17 @@ export default function Index() {
             <View style={{ position: "absolute", bottom: 0, width: "100%" }}>
               <View style={styles.buttonGroup}>
                 <TouchableOpacity style={styles.button}>
-                  <Text style={{ ...styles.textSmall, color: "black" }}>
-                    Join here
-                  </Text>
+                  <Link href="/(auth)/join">
+                    <Text style={{ ...styles.textSmall, color: "black" }}>
+                      Join here
+                    </Text>
+                  </Link>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.transparentButton}>
-                  <Text style={styles.textSmall}>Sign In</Text>
+                  <Link href="/(auth)/signin">
+                    <Text style={styles.textSmall}>Sign In</Text>
+                  </Link>
                 </TouchableOpacity>
               </View>
               <View style={{ alignItems: "center", paddingVertical: 20 }}>
