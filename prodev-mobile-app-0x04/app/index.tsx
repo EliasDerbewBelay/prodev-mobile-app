@@ -1,53 +1,55 @@
 import {
-  View,
   Text,
-  ImageBackground,
+  View,
   Image,
+  ImageBackground,
   TouchableOpacity,
 } from "react-native";
-import { Link } from "expo-router";
+import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { styles } from "@/styles/_mainstyle";
 import { BACKGROUNDIMAGE, HEROLOGO } from "@/constants";
 
 export default function Index() {
   return (
-    <View style={styles.container}>
-      <ImageBackground
-        source={BACKGROUNDIMAGE}
-        style={styles.backgroundImageContainer}
-      >
-        <View style={styles.logoContainer}>
-          <Image
-            source={HEROLOGO}
-            style={{ width: 150, height: 150 }}
-            resizeMode="contain"
-          />
-        </View>
+    <SafeAreaProvider>
+      <SafeAreaView style={{ flex: 1 }}>
+        <ImageBackground
+          source={BACKGROUNDIMAGE}
+          style={styles.background}
+          resizeMode="cover"
+        >
+          <View style={styles.container}>
+            <View style={styles.companyLogo}>
+              <Image source={HEROLOGO} />
+            </View>
 
-        <View style={styles.titleContainer}>
-          <Text style={styles.titleText}>Welcome to ProDev</Text>
-        </View>
+            <View style={styles.textGroup}>
+              <Text style={styles.textLarge}>
+                Find your favorite place here
+              </Text>
+              <Text style={styles.textSmall}>The best prices for over 2 </Text>
+              <Text style={styles.textSmall}>million properties worldwide</Text>
+            </View>
 
-        <View style={styles.titleSubTextContainer}>
-          <Text style={styles.titleSubText}>
-            Your gateway to professional opportunities
-          </Text>
-        </View>
+            <View style={{ position: "absolute", bottom: 0, width: "100%" }}>
+              <View style={styles.buttonGroup}>
+                <TouchableOpacity style={styles.button}>
+                  <Text style={{ ...styles.textSmall, color: "black" }}>
+                    Join here
+                  </Text>
+                </TouchableOpacity>
 
-        <View style={styles.buttonGroup}>
-          <Link href="join" asChild>
-            <TouchableOpacity style={styles.buttonPrimary}>
-              <Text style={styles.buttonPrimaryText}>Join Now</Text>
-            </TouchableOpacity>
-          </Link>
-
-          <Link href="signin" asChild>
-            <TouchableOpacity style={styles.buttonSecondary}>
-              <Text style={styles.buttonSecondaryText}>Sign In</Text>
-            </TouchableOpacity>
-          </Link>
-        </View>
-      </ImageBackground>
-    </View>
+                <TouchableOpacity style={styles.transparentButton}>
+                  <Text style={styles.textSmall}>Sign In</Text>
+                </TouchableOpacity>
+              </View>
+              <View style={{ alignItems: "center", paddingVertical: 20 }}>
+                <Text style={{ color: "white" }}>Continue to home</Text>
+              </View>
+            </View>
+          </View>
+        </ImageBackground>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
