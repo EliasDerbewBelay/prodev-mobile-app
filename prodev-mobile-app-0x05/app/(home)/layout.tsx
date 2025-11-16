@@ -1,9 +1,8 @@
-import {
-  AntDesign,
-  EvilIcons,
-  FontAwesome,
-  Ionicons,
-} from "@expo/vector-icons";
+import AntDesign from "@expo/vector-icons/AntDesign";
+import EvilIcons from "@expo/vector-icons/EvilIcons";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import Ionicons from "@expo/vector-icons/Ionicons";
+
 import { Tabs } from "expo-router";
 
 const HomeRootLayout = () => {
@@ -50,7 +49,7 @@ const HomeRootLayout = () => {
         name="profile"
         options={{
           title: "Profile",
-          headerShown: true,
+          // headerShown: true,
           tabBarIcon: ({ color }) => (
             <FontAwesome name="user-o" size={24} color="black" />
           ),
